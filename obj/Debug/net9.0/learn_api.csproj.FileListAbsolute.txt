@@ -64,3 +64,4 @@ C:\Users\hp\Desktop\.NET projects\learn_api\learn_api\obj\Debug\net9.0\refint\le
 C:\Users\hp\Desktop\.NET projects\learn_api\learn_api\obj\Debug\net9.0\learn_api.pdb
 C:\Users\hp\Desktop\.NET projects\learn_api\learn_api\obj\Debug\net9.0\learn_api.genruntimeconfig.cache
 C:\Users\hp\Desktop\.NET projects\learn_api\learn_api\obj\Debug\net9.0\ref\learn_api.dll
+C:\Users\hp\Desktop\.NET projects\learn_api\learn_api\obj\Debug\net9.0\learn_api.sourcelink.json

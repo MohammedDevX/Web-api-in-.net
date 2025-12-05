@@ -92,12 +92,17 @@ namespace learn_api.Controllers
             return CreatedAtAction(nameof(GetBooks), new {Id = book.Id}, book); // 201 status code
         }
 
+        // This is an action with PUT request, allowing us to update a book, he accepted 2 params, the id, and 
+        // the new object
+        // If the object id doesnt existe in the Liste he return NotFound (404 status code)
+        // else he affecte the data in the new object to the old one and we return NoContent (204 status code)
+        // thats meen the reqeuest is successfuly passed, but we return no content
         [HttpPut("{id}")]
         public IActionResult Put(int id, Book updatedBook)
         {
             if (books.SingleOrDefault(b => b.Id == id) == null)
             {
-                return NotFound("This doesnt existe !");
+                return NotFound("This book doesnt existe !");
             }
 
             Book book = books.SingleOrDefault(b => b.Id == id);
@@ -106,7 +111,7 @@ namespace learn_api.Controllers
             book.Title = updatedBook.Title;
             book.Author = updatedBook.Author;
             book.YearPublished = updatedBook.YearPublished;
-            return Ok();
+            return NoContent(); // 204 status code
         }
     }
 }
