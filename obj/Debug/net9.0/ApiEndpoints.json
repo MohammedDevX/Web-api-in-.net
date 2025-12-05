@@ -47,6 +47,22 @@
   },
   {
     "ContainingType": "learn_api.Controllers.BooksController",
+    "Method": "DeleteBook",
+    "RelativePath": "api/Books",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "learn_api.Controllers.BooksController",
     "Method": "GetBooks",
     "RelativePath": "api/Books/{id}",
     "HttpMethod": "GET",
@@ -73,7 +89,7 @@
   },
   {
     "ContainingType": "learn_api.Controllers.BooksController",
-    "Method": "Put",
+    "Method": "UpdateBook",
     "RelativePath": "api/Books/{id}",
     "HttpMethod": "PUT",
     "IsController": true,

@@ -98,7 +98,7 @@ namespace learn_api.Controllers
         // else he affecte the data in the new object to the old one and we return NoContent (204 status code)
         // thats meen the reqeuest is successfuly passed, but we return no content
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Book updatedBook)
+        public IActionResult UpdateBook(int id, Book updatedBook)
         {
             if (books.SingleOrDefault(b => b.Id == id) == null)
             {
@@ -107,11 +107,23 @@ namespace learn_api.Controllers
 
             Book book = books.SingleOrDefault(b => b.Id == id);
 
-            book.Id = updatedBook.Id;
+            //book.Id = updatedBook.Id;
             book.Title = updatedBook.Title;
             book.Author = updatedBook.Author;
             book.YearPublished = updatedBook.YearPublished;
             return NoContent(); // 204 status code
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBook(int id)
+        {
+            if (books.SingleOrDefault(b => b.Id == id) == null)
+            {
+                return NotFound();
+            }
+
+            books.Remove(books.SingleOrDefault(b => b.Id == id));
+            return NoContent();
         }
     }
 }

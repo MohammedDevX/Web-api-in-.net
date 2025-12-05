@@ -10,7 +10,8 @@ Accept: application/json
 // Every action should be declared in this file
 // 1- We made the Http method {{the base url, who is routeURL}}/the path of the route
 // who is routeURL/api/Books
-// 2- We made => Accept: appliaction/json to made the data as json format
+// 2- We made => Accept: appliaction/json thats meen the server must return 
+// json format data to the client
 
 GET {{routeURL}}/api/Books/
 Accept: application/json
@@ -23,6 +24,7 @@ Accept: application/json
 ### 
 
 POST {{routeURL}}/api/Books
+// Content-Type : meen the data sending by the client must be in json format
 Content-Type: application/json
 {
   "Id": 10,
@@ -30,3 +32,18 @@ Content-Type: application/json
   "Author": "Mohammed",
   "YearPublished": 2004
 }
+
+###
+
+PUT {{routeURL}}/api/Books/1
+Content-Type: application/json
+{
+  "Title": "Hello js",
+  "Author": "Mohammed",
+  "YearPublished": 2002
+}
+
+###
+
+DELETE {{routeURL}}/api/Books/1
+Accept: application/json
