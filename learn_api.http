@@ -1,0 +1,32 @@
+// Here we configure our routes
+
+@routeURL = http://localhost:5211
+
+GET {{routeURL}}/weatherforecast/
+Accept: application/json
+
+###
+
+// Every action should be declared in this file
+// 1- We made the Http method {{the base url, who is routeURL}}/the path of the route
+// who is routeURL/api/Books
+// 2- We made => Accept: appliaction/json to made the data as json format
+
+GET {{routeURL}}/api/Books/
+Accept: application/json
+
+###
+
+GET {{routeURL}}/api/Books/id
+Accept: application/json
+
+### 
+
+POST {{routeURL}}/api/Books
+Content-Type: application/json
+{
+  "Id": 10,
+  "Title": "Hello js",
+  "Author": "Mohammed",
+  "YearPublished": 2004
+}
