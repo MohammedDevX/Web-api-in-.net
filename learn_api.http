@@ -47,3 +47,39 @@ Content-Type: application/json
 
 DELETE {{routeURL}}/api/Books/1
 Accept: application/json
+
+###
+
+GET {{routeURL}}/api/BooksEF
+Accept: appliaction/json
+
+###
+
+GET {{routeURL}}/api/BooksEF/1
+Accept: application/json
+
+###
+
+POST {{routeURL}}/api/BooksEF
+Content-Type: application/json
+{
+  "Title": "Test",
+  "Author": "Yassin",
+  "YearPublished": 2004
+}
+
+###
+
+PUT {{routeURL}}/api/BooksEF/2
+Content-Type: application/json
+{
+  "Id": 2,
+  "Title": "Learn .net",
+  "Author": "Ahmed",
+  "YearPublished": 2015
+}
+
+###
+
+DELETE {{routeURL}}/api/BooksEF/4
+Accept: application/json

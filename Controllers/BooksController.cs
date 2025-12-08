@@ -1,4 +1,6 @@
-﻿using learn_api.Models;
+﻿using learn_api.Mappers;
+using learn_api.Models;
+using learn_api.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -77,8 +79,9 @@ namespace learn_api.Controllers
         // Otherwise, it returns CreatedAtAction (201 status code), which references the GET action
         // and includes the Id of the created object.
         [HttpPost]
-        public ActionResult<Book> SendBook(Book book)
+        public ActionResult<Book> SendBook(BookVM bookvm)
         {
+            Book book = BookMP.AffecteBookVMToBook(bookvm);
             if (book.YearPublished < 1000 || book.YearPublished > DateTime.Now.Year)
             {
                 return BadRequest("Date format is invalid !"); // 400 status code
@@ -98,19 +101,19 @@ namespace learn_api.Controllers
         // else he affecte the data in the new object to the old one and we return NoContent (204 status code)
         // thats meen the reqeuest is successfuly passed, but we return no content
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, Book updatedBook)
+        public IActionResult UpdateBook(int id, BookVM bookvm)
         {
             if (books.SingleOrDefault(b => b.Id == id) == null)
             {
                 return NotFound("This book doesnt existe !");
             }
-
+            Book bookU = BookMP.AffecteBookVMToBook(bookvm);
             Book book = books.SingleOrDefault(b => b.Id == id);
 
             //book.Id = updatedBook.Id;
-            book.Title = updatedBook.Title;
-            book.Author = updatedBook.Author;
-            book.YearPublished = updatedBook.YearPublished;
+            book.Title = bookU.Title;
+            book.Author = bookU.Author;
+            book.YearPublished = bookU.YearPublished;
             return NoContent(); // 204 status code
         }
 

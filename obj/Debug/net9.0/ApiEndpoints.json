@@ -28,8 +28,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "book",
-        "Type": "learn_api.Models.Book",
+        "Name": "bookvm",
+        "Type": "learn_api.ViewModels.BookVM",
         "IsRequired": true
       }
     ],
@@ -44,22 +44,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "learn_api.Controllers.BooksController",
-    "Method": "DeleteBook",
-    "RelativePath": "api/Books",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "learn_api.Controllers.BooksController",
@@ -101,8 +85,133 @@
         "IsRequired": true
       },
       {
-        "Name": "updatedBook",
+        "Name": "bookvm",
+        "Type": "learn_api.ViewModels.BookVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "learn_api.Controllers.BooksController",
+    "Method": "DeleteBook",
+    "RelativePath": "api/Books/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "learn_api.Controllers.BooksEFController",
+    "Method": "GetBooks",
+    "RelativePath": "api/BooksEF",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
         "Type": "learn_api.Models.Book",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "learn_api.Controllers.BooksEFController",
+    "Method": "AddBook",
+    "RelativePath": "api/BooksEF",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookvm",
+        "Type": "learn_api.ViewModels.BookVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "learn_api.Models.Book",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "learn_api.Controllers.BooksEFController",
+    "Method": "GetBook",
+    "RelativePath": "api/BooksEF/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "learn_api.Models.Book",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "learn_api.Controllers.BooksEFController",
+    "Method": "Delete",
+    "RelativePath": "api/BooksEF/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "learn_api.Controllers.BooksEFController",
+    "Method": "Update",
+    "RelativePath": "api/BooksEF/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "bookvm",
+        "Type": "learn_api.ViewModels.BookVM",
         "IsRequired": true
       }
     ],
@@ -110,7 +219,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_0",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
     "RelativePath": "test",
     "HttpMethod": "GET",
     "IsController": false,
