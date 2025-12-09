@@ -83,3 +83,18 @@ Content-Type: application/json
 
 DELETE {{routeURL}}/api/BooksEF/4
 Accept: application/json
+
+###
+
+GET {{routeURL}}/api/Books
+Accept: application/json
+
+###
+
+POST {{routeURL}}/api/Books
+Content-Type: application/json
+{
+  "Title": "Learn .net",
+  "Author": "Ahmed",
+  "YearPublished": 2015
+}

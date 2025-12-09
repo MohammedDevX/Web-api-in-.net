@@ -52,9 +52,9 @@ namespace learn_api.Controllers
         };
 
         // This is the method with GET request method, allowing us to list the data 
-        [HttpGet] 
+        [HttpGet]
         // Return List of Book
-        public ActionResult<List<Book>> GetBooks()
+        public ActionResult<Book> GetBooks()
         {
             return Ok(books); // 200 status code
         }
